@@ -26,6 +26,9 @@ df_short = df.head(10)
 # UPDATE : Initialisation de l'application
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+# ajout pour déploiement app
+server = app.server
+
 # Créer le graphique initial
 fig = px.histogram(df_short, x='title_book', y='  num_pages', histfunc='avg', orientation='v',
                    hover_data={'title_book': True, '  num_pages': True})
